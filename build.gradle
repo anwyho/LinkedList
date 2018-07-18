@@ -46,4 +46,7 @@ repositories {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "PASSED", "STARTED", "FAILED", "SKIPPED"
+    }
 }

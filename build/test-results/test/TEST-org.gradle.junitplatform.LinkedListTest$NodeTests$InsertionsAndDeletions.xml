@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-18T02:11:28" hostname="Anthonys-MacBook-Air.local" time="0.013">
+  <properties/>
+  <testcase name="testInsertions()" classname="org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions" time="0.005"/>
+  <testcase name="testDeletions()" classname="org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions" time="0.006"/>
+  <system-out><![CDATA[A
+B
+C
+A
+A
+C
+D
+E
+C
+D
+E
+C
+A
+C
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
