@@ -71,11 +71,11 @@ public class ListNode<T extends Comparable<? super T>> {
     if (this.getClass() != o.getClass()) return false;
     @SuppressWarnings("unchecked")
     ListNode<T> oNode = (ListNode<T>) o;
-    return nodesEqual(oNode);
+    return equals(oNode);
   }
 
   // can be overridden by subclass
-  boolean nodesEqual(ListNode<T> n) {
+  boolean equals(ListNode<T> n) {
     return _data == n.data();
   }
 

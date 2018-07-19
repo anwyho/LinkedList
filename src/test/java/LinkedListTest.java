@@ -12,11 +12,31 @@ import io.github.anwyho.linkedlist.*;
 @DisplayName("LinkedList Test")
 public class LinkedListTest {
 
+  // Helper method - compares a char List to 
+  boolean checkStringToList(final String pattern, final ListNode<Character> HEAD) {
+    ListNode<Character> head = HEAD;
+    for (int i = 0; i < pattern.length(); i++) {
+      if (head == null) {
+        return false;
+      }
+      if (pattern.charAt(i) == head.data()) {
+        System.out.println(head.data());
+        head = head.next();
+      }
+    }
+    return true;
+  }
+
+  boolean checkStringToList(final String pattern, final LinkedList<Character> list) {
+    return checkStringToList(pattern, list.head());
+  }
+
   @Nested
   @DisplayName("Test ListNodes")
   class NodeTests {
+
     @Test
-    @DisplayName("Create ListNode")
+    @DisplayName("Creating nodes")
     void testCreateListNode() {
       ListNode<Integer> n = new ListNode<Integer>(3);
       assertNotNull(n);
@@ -27,6 +47,7 @@ public class LinkedListTest {
     @Disabled
     void testCreateNodeWithInvalidType() {
       // // Compiler will catch error because of ListNode declaration
+      // // Doesn't compile because ArrayList does not extend Comparable
       // ListNode<ArrayList<Integer>> a = new ListNode<ArrayList<Integer>>();
     }
 
@@ -47,14 +68,14 @@ public class LinkedListTest {
 
 
       @Test
-      @DisplayName("Test compareTo() / Comparable")
+      @DisplayName("Comparable types")
       void testComparingListNodes() {
         assertEquals(na1.compareTo(na2), 0);
         assertNotEquals(na1.compareTo(nb1), 0);
       }
 
       @Test
-      @DisplayName("Test four different types of return ")
+      @DisplayName("Node equality")
       void testNodeEquality() {
         assertTrue(na1.equals(na1));
         assertFalse(na1.equals(null));
@@ -64,7 +85,7 @@ public class LinkedListTest {
     }
 
     @Nested
-    @DisplayName("Test Insertions and Deletions")
+    @DisplayName("Test Node Insertions and Deletions")
     class InsertionsAndDeletions {
 
       ListNode<Character> na;
@@ -82,23 +103,9 @@ public class LinkedListTest {
         ne = new ListNode<Character>('E');
       }
 
-      // Helper method - compares a char List to 
-      boolean checkStringToList(final String pattern, final ListNode<Character> HEAD) {
-        ListNode<Character> head = HEAD;
-        for (int i = 0; i < pattern.length(); i++) {
-          if (head == null) {
-            return false;
-          }
-          if (pattern.charAt(i) == head.data()) {
-            System.out.println(head.data());
-            head = head.next();
-          }
-        }
-        return true;
-      }
-
       @Test
-      void testInsertions() {
+      @DisplayName("Inserting to nodes")
+      void testInsertingBeforeAndAfter() {
         na.insertMeBeforeNode(nc);
         nb.insertMeBeforeNode(nc);
         assertTrue(checkStringToList("ABC",na));
@@ -108,7 +115,8 @@ public class LinkedListTest {
       }
 
       @Test
-      void testDeletions() {
+      @DisplayName("Removing nodes")
+      void testRemovingNodes() {
         assertEquals((char) na.removeMe(),'A');
         na.insertMeBeforeNode(nb);
         nb.insertMeBeforeNode(nc);
@@ -131,20 +139,77 @@ public class LinkedListTest {
   }
 
   @Nested
-  @DisplayName("Testing Linked Lists")
+  @DisplayName("Testing LinkedLists")
   class ListTests {
 
     @Test
-    @DisplayName("Create a list")
+    @DisplayName("Creating LinkedLists")
     void testCreateList() {
       LinkedList<Integer> l = new LinkedList<Integer>();
       assertNotNull(l);
     }
 
+    @Nested
+    @DisplayName("Test different LinkedList operations")
+    class ListOperations {
+      LinkedList<Character> l;
+      ListNode<Character> na;
+      ListNode<Character> nb;
+      ListNode<Character> nc;
+      ListNode<Character> nd;
+      ListNode<Character> ne;
+
+      @BeforeEach
+      void initiateNodes() {
+        l = new LinkedList<Character>();
+        na = new ListNode<Character>('A');
+        nb = new ListNode<Character>('B');
+        nc = new ListNode<Character>('C');
+        nd = new ListNode<Character>('D');
+        ne = new ListNode<Character>('E');
+      }
+
+      @Test
+      @DisplayName("Appending to lists")
+      void testAppend() {
+        assertEquals(l.size(), 0);
+        l.append(na);
+        assertEquals(l.size(), 1);
+        l.append(nb);
+        assertEquals(l.size(), 2);
+        l.append(nc);
+        assertEquals(l.size(), 3);
+        assertTrue(checkStringToList("ABC",l));
+      }
+
+      @Test
+      @DisplayName("Inserting to lists")
+      void testInsertAtIndex() {
+        // insert into empty list
+        assertEquals(l.size(), 0);
+        
+        l.insertAtIndex(0, na);
+        assertEquals(l.size(), 1);
+        assertTrue(checkStringToList("A",l));
+
+        l.insertAtIndex(0, nb);
+        assertEquals(l.size(), 2);
+        assertTrue(checkStringToList("BA",l));
+
+        l.insertAtIndex(2, nc);
+        assertEquals(l.size(), 3);
+        assertTrue(checkStringToList("BAC",l));
+
+        l.insertAtIndex(2, nd);
+        assertEquals(l.size(), 4);
+        assertTrue(checkStringToList("BADC",l));
+      }
+    }
+
 
 
     @Test
-    @DisplayName("Tests for circular list checking")
+    @DisplayName("Test for circular list checking")
     void testCircularList() {
       // TODO: implement
     }

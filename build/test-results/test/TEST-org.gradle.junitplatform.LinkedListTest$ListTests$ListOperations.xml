@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.junitplatform.LinkedListTest$ListTests$ListOperations" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-19T23:11:17" hostname="Anthonys-MacBook-Air.local" time="0.019">
+  <properties/>
+  <testcase name="Inserting to lists" classname="org.gradle.junitplatform.LinkedListTest$ListTests$ListOperations" time="0.011"/>
+  <testcase name="Appending to lists" classname="org.gradle.junitplatform.LinkedListTest$ListTests$ListOperations" time="0.004"/>
+  <system-out><![CDATA[A
+B
+A
+B
+A
+C
+B
+D
+A
+B
+C
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
