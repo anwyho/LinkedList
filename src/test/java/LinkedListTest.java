@@ -22,6 +22,8 @@ public class LinkedListTest {
       if (pattern.charAt(i) == head.data()) {
         System.out.println(head.data());
         head = head.next();
+      } else {
+        return false;
       }
     }
     return true;
@@ -203,6 +205,37 @@ public class LinkedListTest {
         l.insertAtIndex(2, nd);
         assertEquals(l.size(), 4);
         assertTrue(checkStringToList("BADC",l));
+
+        l.insertAtIndex(2, ne);
+        assertEquals(l.size(), 5);
+        assertTrue(checkStringToList("BAEDC", l));
+      }
+
+      @Test
+      @DisplayName("Inserting to lists using negative indices")
+      void testInsertAtIndexWithNegativeIndex() {
+        // insert into empty list
+        assertEquals(l.size(), 0);
+        
+        l.insertAtIndex(0, na);
+        assertEquals(l.size(), 1);
+        assertTrue(checkStringToList("A",l));
+
+        l.insertAtIndex(-2, nb);
+        assertEquals(l.size(), 2);
+        assertTrue(checkStringToList("BA",l));
+
+        l.insertAtIndex(-1, nc);
+        assertEquals(l.size(), 3);
+        assertTrue(checkStringToList("BAC",l));
+
+        l.insertAtIndex(0, nd);
+        assertEquals(l.size(), 4);
+        assertTrue(checkStringToList("BADC",l));
+
+        l.insertAtIndex(-4, ne);
+        assertEquals(l.size(), 5);
+        assertTrue(checkStringToList("BAEDC", l));
       }
     }
 
