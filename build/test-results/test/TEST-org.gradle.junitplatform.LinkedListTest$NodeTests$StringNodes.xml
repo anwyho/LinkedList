@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.gradle.junitplatform.LinkedListTest$NodeTests$StringNodes" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-21T00:26:06" hostname="Anthonys-MacBook-Air.local" time="0.009">
-  <properties/>
-  <testcase name="Node equality" classname="org.gradle.junitplatform.LinkedListTest$NodeTests$StringNodes" time="0.001"/>
-  <testcase name="Comparable types" classname="org.gradle.junitplatform.LinkedListTest$NodeTests$StringNodes" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

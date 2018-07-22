@@ -1,87 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions</title>
-<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
-<link href="../css/style.css" rel="stylesheet" type="text/css"/>
-<script src="../js/report.js" type="text/javascript"></script>
-</head>
-<body>
-<div id="content">
-<h1>Class org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions</h1>
-<div class="breadcrumbs">
-<a href="../index.html">all</a> &gt; 
-<a href="../packages/org.gradle.junitplatform.html">org.gradle.junitplatform</a> &gt; LinkedListTest$NodeTests$InsertionsAndDeletions</div>
-<div id="summary">
-<table>
-<tr>
-<td>
-<div class="summaryGroup">
-<table>
-<tr>
-<td>
-<div class="infoBox" id="tests">
-<div class="counter">2</div>
-<p>tests</p>
-</div>
-</td>
-<td>
-<div class="infoBox" id="failures">
-<div class="counter">2</div>
-<p>failures</p>
-</div>
-</td>
-<td>
-<div class="infoBox" id="ignored">
-<div class="counter">0</div>
-<p>ignored</p>
-</div>
-</td>
-<td>
-<div class="infoBox" id="duration">
-<div class="counter">0.006s</div>
-<p>duration</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</td>
-<td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
-<p>successful</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div id="tabs">
-<ul class="tabLinks">
-<li>
-<a href="#tab0">Failed tests</a>
-</li>
-<li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
-</li>
-</ul>
-<div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="Inserting to nodes"></a>
-<h3 class="failures">Inserting to nodes</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LinkedListTest$ListTests$ListOperations" tests="3" skipped="0" failures="2" errors="0" timestamp="2018-07-22T08:29:39" hostname="Anthonys-MacBook-Air.local" time="0.037">
+  <properties/>
+  <testcase name="Inserting to lists using negative indices" classname="LinkedListTest$ListTests$ListOperations" time="0.019">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:36)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:42)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:37)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:115)
-	at org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions.testInsertingBeforeAndAfter(LinkedListTest.java:116)
+	at LinkedListTest$ListTests$ListOperations.testInsertAtIndexWithNegativeIndex(LinkedListTest.java:229)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -191,19 +117,15 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
 	at java.base/java.lang.Thread.run(Thread.java:844)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Removing nodes"></a>
-<h3 class="failures">Removing nodes</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
+</failure>
+  </testcase>
+  <testcase name="Inserting to lists" classname="LinkedListTest$ListTests$ListOperations" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:36)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:42)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:37)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:115)
-	at org.gradle.junitplatform.LinkedListTest$NodeTests$InsertionsAndDeletions.testRemovingNodes(LinkedListTest.java:132)
+	at LinkedListTest$ListTests$ListOperations.testInsertAtIndex(LinkedListTest.java:202)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -313,59 +235,25 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
 	at java.base/java.lang.Thread.run(Thread.java:844)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
-<h2>Tests</h2>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Duration</th>
-<th>Result</th>
-</tr>
-</thead>
-<tr>
-<td class="failures">Inserting to nodes</td>
-<td>0.004s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Removing nodes</td>
-<td>0.002s</td>
-<td class="failures">failed</td>
-</tr>
-</table>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>A
+</failure>
+  </testcase>
+  <testcase name="Appending to lists" classname="LinkedListTest$ListTests$ListOperations" time="0.001"/>
+  <system-out><![CDATA[A
+B
+A
+B
+A
+C
+A
+B
+A
+B
+A
+C
+B
+A
 B
 C
-A
-A
-C
-D
-E
-C
-D
-E
-</pre>
-</span>
-</div>
-</div>
-<div id="footer">
-<p>
-<div>
-<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
-<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
-</label>
-</div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.6</a> at Jul 20, 2018, 5:26:06 PM</p>
-</div>
-</div>
-</body>
-</html>
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

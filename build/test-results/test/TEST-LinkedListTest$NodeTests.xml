@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LinkedListTest$NodeTests" tests="2" skipped="1" failures="0" errors="0" timestamp="2018-07-22T08:29:39" hostname="Anthonys-MacBook-Air.local" time="0.092">
+  <properties/>
+  <testcase name="Creating nodes" classname="LinkedListTest$NodeTests" time="0.001"/>
+  <testcase name="Invalid element type -- this test does not compile." classname="LinkedListTest$NodeTests" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
